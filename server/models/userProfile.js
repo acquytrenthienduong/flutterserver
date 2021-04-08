@@ -11,21 +11,25 @@ mongoose.Promise = global.Promise;
 // }
 const userProfileSchema = new mongoose.Schema({
   _id: mongoose.Schema.Types.ObjectId,
-  avatar_url: {
+  // avatar_url: {
+  //   type: String,
+  //   require: false,
+  // },
+  // basicInfo: {
+  //   type: Object,
+  //   require: false,
+  // },
+  // certificate: {
+  //   type: Object,
+  //   require: false,
+  // },
+  // wishes: {
+  //   type: Object,
+  //   require: false,
+  // },
+  name: {
     type: String,
-    require: false,
-  },
-  basicInfo: {
-    type: Object,
-    require: false,
-  },
-  certificate: {
-    type: Object,
-    require: false,
-  },
-  wishes: {
-    type: Object,
-    require: false,
+    require: true,
   },
 });
 

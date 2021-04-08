@@ -4,10 +4,11 @@ import UserProfile from "../models/userProfile";
 export function createUserProfile(req, res) {
   const profile = new UserProfile({
     _id: mongoose.Types.ObjectId(),
-    avatar_url: req.body.avatar_url,
-    basicInfo: req.body.basicInfo,
-    certificate: req.body.certificate,
-    wishes: req.body.wishes,
+    name: req.body.name,
+    // avatar_url: req.body.avatar_url,
+    // basicInfo: req.body.basicInfo,
+    // certificate: req.body.certificate,
+    // wishes: req.body.wishes,
   });
 
   return profile
@@ -43,7 +44,6 @@ export function getUserProfile(req, res) {
 
 export function getOneUserProfile(req, res) {
   const id = req.params.userId;
-  console.log('1')
   UserProfile.findById(id)
     .then((data) => {
       res.status(200).json({
@@ -62,6 +62,7 @@ export function getOneUserProfile(req, res) {
 }
 
 export function updateUserProfile(req, res) {
+  console.log("12312312");
   const id = req.params.userId;
   const updateObj = req.body;
 
